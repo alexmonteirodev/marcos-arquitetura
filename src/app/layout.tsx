@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, DM_Sans, Cormorant } from "next/font/google";
+import { DM_Sans, Cormorant } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/footer/Footer";
 import Header from "@/components/header/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cormorant = Cormorant({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${dmSans.variable} ${cormorant.className} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

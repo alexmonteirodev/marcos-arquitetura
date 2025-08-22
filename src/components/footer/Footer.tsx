@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="px-16 py-8 bg-base-400">
+    <footer className="px-16 py-8 bg-base-400 font-dm">
       <div className="flex justify-between mb-16">
         <div className="space-y-10">
           <Image src={logoWhite} height={143} width={325} alt="logo.svg" />

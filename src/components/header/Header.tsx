@@ -17,7 +17,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="flex  justify-between items-center px-16 py-8 bg-transparent">
+    <header className="flex justify-between items-center px-16 py-8 bg-transparent font-dm">
       <Image src={logoDark} height={45} width={281} alt="logo.svg" />
       <nav className="md:block hidden">
         <ul className="flex flex-wrap gap-4">
