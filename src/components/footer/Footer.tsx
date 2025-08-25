@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import logoWhite from "../../../public/svg/logo-white.svg";
 import Link from "next/link";
+import { contato } from "../../contato/contato";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
         <div className="space-y-10">
           <Image src={logoWhite} height={143} width={325} alt="logo.svg" />
           <Link
-            href={""}
+            href={contato}
             className="text-base-100 bg-base-500 rounded-full px-8 py-4"
           >
             Transforme seu sonho em realidade
