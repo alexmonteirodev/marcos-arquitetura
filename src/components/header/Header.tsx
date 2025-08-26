@@ -17,7 +17,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="flex justify-between items-center px-16 py-8 bg-transparent font-dm">
+    <header className="flex justify-between items-center px-8 py-8 bg-transparent font-dm">
       <Image src={logoDark} height={45} width={281} alt="logo.svg" />
       <nav className="md:block hidden">
         <ul className="flex flex-wrap gap-4">
@@ -42,7 +42,7 @@ const Header = () => {
         </ul>
       </nav>
       <button
-        className="md:hidden flex flex-col gap-1 *:h-1 *:w-8 *:bg-base-500 *:rounded-full"
+        className="md:hidden flex flex-col gap-1 *:h-1 *:w-8 *:bg-base-500 *:rounded-full bg-base-100 px-3 py-4 rounded-full"
         onClick={() => setMobileMenu((prev) => !prev)}
       >
         <div></div>

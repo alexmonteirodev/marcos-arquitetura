@@ -20,36 +20,39 @@ const RenderImgs = () => {
       img: renderImg,
     },
   ];
-  return (
-    <div className=" mt-15 relative">
-      <Image src={images[imgI].img} height={678} width={1300} alt="img-jpg" />
-      <div>
-        <ul className="font-dm font-semibold flex justify-center items-center gap-5  absolute top-5 backdrop-blur-md bg-white/30 px-8 py-4 rounded-2xl left-1/2 -translate-x-1/2">
-          {images.map((eachNavItem, i) => {
-            return (
-              <li
-                key={i}
-                onClick={() => setImgI(i)}
-                className={`py-2 px-4 cursor-pointer ${
-                  imgI === i
-                    ? "backdrop-blur-md bg-white/20 rounded-2xl border border-white/40"
-                    : ""
-                }`}
-              >
-                {eachNavItem.label}
-              </li>
-            );
-          })}
-        </ul>
 
-        {/* <ul className="font-dm font-semibold flex justify-center items-center gap-5  absolute top-5 backdrop-blur-md bg-white/30 px-8 py-4 rounded-2xl left-1/2 -translate-x-1/2">
-          <li className=" backdrop-blur-md py-2 px-4 bg-white/20 rounded-2xl border border-white/40">
-            Render
+  // React.useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setImgI((prev) => (images.length - 1 === prev ? 0 : prev + 1));
+  //   }, 3000);
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  return (
+    <div className="relative w-full h-[450px] sm:h-[500px] md:h-[678px] mt-16">
+      <Image
+        src={images[imgI].img}
+        alt="img-jpg"
+        fill
+        className="object-cover object-center rounded-2xl"
+        priority
+      />
+      <ul className="font-dm font-semibold flex justify-center items-center gap-5 absolute top-5 backdrop-blur-md bg-white/30 px-8 py-4 rounded-2xl left-1/2 -translate-x-1/2">
+        {images.map((eachNavItem, i) => (
+          <li
+            key={i}
+            onClick={() => setImgI(i)}
+            className={`py-2 px-4 cursor-pointer ${
+              imgI === i
+                ? "backdrop-blur-md bg-white/20 rounded-2xl border border-white/40 text-base-500"
+                : "text-gray-500"
+            }`}
+          >
+            {eachNavItem.label}
           </li>
-          <li>Planta Baixa</li>
-          <li>PLano 1</li>
-        </ul> */}
-      </div>
+        ))}
+      </ul>
     </div>
   );
 };
