@@ -43,10 +43,10 @@ const RenderImgs = () => {
           <li
             key={i}
             onClick={() => setImgI(i)}
-            className={`py-2 px-4 cursor-pointer ${
+            className={`py-2 px-4 cursor-pointer transition ${
               imgI === i
                 ? "backdrop-blur-md bg-white/20 rounded-2xl border border-white/40 text-base-500"
-                : "text-gray-500"
+                : "text-gray-500 hover:backdrop-blur-md hover:bg-white/20 rounded-2xl border border-transparent hover:border-white/40 hover:text-base-500"
             }`}
           >
             {eachNavItem.label}

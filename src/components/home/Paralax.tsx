@@ -21,8 +21,8 @@ const Paralax = () => {
   const images = [keys, projeto, check];
 
   return (
-    <div className="flex gap-5 justify-center items-center">
-      <div className="bg-base-300 text-4xl rounded-2xl font-dm size-[660px] flex justify-start items-center pl-15">
+    <div className="flex md:flex-row flex-col-reverse gap-5 justify-center items-center ">
+      <div className="bg-base-300 md:text-4xl text-3xl rounded-3xl font-dm md:size-[660px] w-full p-20 flex justify-start items-center pl-15 ">
         <ul className="space-y-3">
           {lines.map((line, i) => (
             <li key={i}>{line.label}</li>

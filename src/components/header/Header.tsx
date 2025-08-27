@@ -27,11 +27,11 @@ const Header = () => {
               <li key={i}>
                 <Link
                   href={link.href}
-                  className={`px-8 py-3 rounded-full text-sm transition-all duration-200 ease-in-out
+                  className={`px-8 py-3 rounded-full text-sm transition duration-250 ease-in-out
               ${
                 isActive
-                  ? "bg-base-400 text-base-100 rounded-xl"
-                  : "bg-base-200 text-base-400"
+                  ? "bg-base-400 text-base-100 rounded-xl hover:rounded-full hover:bg-base-200 hover:text-base-400"
+                  : "bg-base-200 text-base-400 hover:rounded-xl hover:bg-base-400 hover:text-base-100"
               }`}
                 >
                   {link.label}

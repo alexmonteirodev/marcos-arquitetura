@@ -5,6 +5,7 @@ import { contato } from "../contato/contato";
 import Cards from "@/components/home/Cards";
 import RenderImgs from "@/components/home/RenderImgs";
 import Paralax from "@/components/home/Paralax";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -59,7 +60,7 @@ export default function Home() {
           </h1>
           <Link
             href={contato}
-            className="text-base-100 font-dm bg-base-500 rounded-full px-8 py-4 mt-5 font-semibold text-xl"
+            className="text-base-100 font-dm bg-base-500 rounded-full px-8 py-4 mt-5 font-semibold text-xl hover:rounded-xl hover:bg-base-200 hover:text-base-400 transition duration-300 ease-in-out hover:scale-105"
           >
             Quero contratar
           </Link>
@@ -87,6 +88,17 @@ export default function Home() {
             <p className="md:text-xl">Clientes satisfeitos</p>
           </div>
         </div>
+      </section>
+      <section className="px-8 my-15">
+        <div className="my-15">
+          <h1 className="text-3xl md:text-4xl font-cormorant font-[500]  m-auto md:m-0 text-center">
+            Entregamos um trabalho impecável
+          </h1>
+          <h1 className="font-dm font-bold text-3xl text-base-500 w-full m-auto md:m-0 text-center ">
+            que supera expectativas.
+          </h1>
+        </div>
+        <Testimonials />
       </section>
     </div>
   );
