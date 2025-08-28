@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import arrowLeft from "../../../public/imgs/home/arrow-left.svg";
 import img0 from "../../../public/imgs/home/testimonial-img-0.svg";
 
 const Testimonials = () => {
@@ -30,15 +31,15 @@ const Testimonials = () => {
     },
   ];
   return (
-    <div className="flex justify-center items-center gap-5">
+    <div className="flex justify-center items-center gap-10 relative">
       <button
         onClick={() => setTestimonialI((prev) => (prev <= 0 ? 2 : prev - 1))}
-        className="cursor-pointer"
+        className="cursor-pointer active:scale-110 transition"
       >
-        left
+        <Image src={arrowLeft} height={20} width={20} alt="arrow.svg" />
       </button>
       <div className="flex justify-center items-center flex-col md:flex-row gap-12">
-        <div>
+        <div className="size-90 ">
           <Image
             src={testimonialsList[testimonialI].img}
             width={440}
@@ -47,7 +48,9 @@ const Testimonials = () => {
           />
         </div>
         <div className="flex flex-col text-xl md:w-[440px] font-dm ">
-          <p className="font-semibold">{testimonialsList[testimonialI].name}</p>
+          <p className="font-semibold first-letter:uppercase">
+            {testimonialsList[testimonialI].name}
+          </p>
           <p>{testimonialsList[testimonialI].testimonial}</p>
           <Link
             href={testimonialsList[testimonialI].link}
@@ -55,6 +58,29 @@ const Testimonials = () => {
           >
             Ver Projeto
           </Link>
+          <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 flex justify-center items-center gap-3 transition *:h-1.5 *:w-15">
+            <div
+              className={`${
+                testimonialI === 0
+                  ? "bg-base-500 rounded-full"
+                  : "bg-base-300 rounded-full"
+              }`}
+            ></div>
+            <div
+              className={`${
+                testimonialI === 1
+                  ? "bg-base-500 rounded-full"
+                  : "bg-base-300 rounded-full"
+              }`}
+            ></div>
+            <div
+              className={`${
+                testimonialI === 2
+                  ? "bg-base-500 rounded-full"
+                  : "bg-base-300 rounded-full"
+              }`}
+            ></div>
+          </div>
         </div>
       </div>
       <button
@@ -63,9 +89,15 @@ const Testimonials = () => {
             prev === testimonialsList.length - 1 ? 0 : prev + 1
           )
         }
-        className="cursor-pointer"
+        className="cursor-pointer active:scale-110 transition"
       >
-        right
+        <Image
+          src={arrowLeft}
+          height={20}
+          width={20}
+          alt="arrow.svg"
+          className="rotate-180"
+        />
       </button>
     </div>
   );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import banner from "../../public/imgs/home/banner.jpg";
+import mensageIcon from "../../public/imgs/home/mesage-icon.svg";
 import Link from "next/link";
 import { contato } from "../contato/contato";
 import Cards from "@/components/home/Cards";
@@ -99,6 +100,25 @@ export default function Home() {
           </h1>
         </div>
         <Testimonials />
+        <div className="mt-35 flex items-center justify-center flex-col gap-10">
+          <h1 className="font-dm  text-3xl text-base-500 w-full m-auto md:m-0 text-center ">
+            Vamos tirar o seu projeto do papel?
+          </h1>
+          <Link href={contato} className="">
+            <div className="inline-flex items-center gap-15 font-dm font-semibold text-2xl bg-[#F3F3F2] py-4 px-8 rounded-full hover:scale-110 duration-200 transition hover:bg-base-300">
+              <p> Envie uma mensagem</p>
+              <div className=" bg-base-300 size-20 flex justify-center items-center rounded-full ">
+                <Image
+                  src={mensageIcon}
+                  height={25}
+                  width={25}
+                  alt="ico.svg"
+                  className="animate-bounce"
+                />
+              </div>
+            </div>
+          </Link>
+        </div>
       </section>
     </div>
   );
