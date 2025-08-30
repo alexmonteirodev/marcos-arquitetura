@@ -16,18 +16,18 @@ const RenderImgs = () => {
       img: renderImg,
     },
     {
-      label: "PLano 1",
+      label: "Plano 1",
       img: renderImg,
     },
   ];
 
-  // React.useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setImgI((prev) => (images.length - 1 === prev ? 0 : prev + 1));
-  //   }, 3000);
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setImgI((prev) => (images.length - 1 === prev ? 0 : prev + 1));
+    }, 3000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative w-full h-[450px] sm:h-[500px] md:h-[678px] mt-16">

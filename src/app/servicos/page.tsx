@@ -48,19 +48,20 @@ const Servicos = () => {
           Da inspiração à realização. Conheça nossos serviços
         </h1>
       </section>
+      <hr className="w-[50%] -ml-8" />
       <section className="space-y-10">
         {servicos.map((service, i) => (
           <div
             key={i}
             id={service.id}
-            className="flex justify-center items-center flex-wrap-reverse md:flex-row gap-3"
+            className={`flex justify-center items-center flex-wrap-reverse md:flex-row gap-10 `}
           >
-            <div className="md:w-[40%] space-y-4">
-              <h2 className="first-letter:uppercase text-3xl ">
+            <div className={`md:w-[40%] space-y-4 `}>
+              <h2 className="first-letter:uppercase text-3xl md:text-4xl ">
                 {service.title}{" "}
                 <span className="font-bold">{service.subtitle}</span>
               </h2>
-              <p className="text-start text-xl">{service.text}</p>
+              <p className="text-start text-xl md:text-2xl">{service.text}</p>
               <Link
                 href={contato}
                 className="text-base-100 font-dm bg-base-500 rounded-full px-8 py-4 mt-5 font-semibold text-xl hover:rounded-xl hover:bg-base-200 hover:text-base-400 transition duration-300 ease-in-out hover:scale-105 inline-flex"

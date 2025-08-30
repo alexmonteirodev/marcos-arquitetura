@@ -90,7 +90,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="px-8 my-15">
+      <section className="px-8 my-15" id="contato">
         <div className="my-15">
           <h1 className="text-3xl md:text-4xl font-cormorant font-[500]  m-auto md:m-0 text-center">
             Entregamos um trabalho impecável

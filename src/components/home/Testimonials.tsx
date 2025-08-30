@@ -30,6 +30,17 @@ const Testimonials = () => {
       link: "",
     },
   ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setTestimonialI((prev) =>
+        prev === testimonialsList.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="flex justify-center items-center gap-10 relative">
       <button
@@ -48,7 +59,7 @@ const Testimonials = () => {
           />
         </div>
         <div className="flex flex-col text-xl md:w-[440px] font-dm ">
-          <p className="font-semibold first-letter:uppercase">
+          <p className="font-semibold first-letter:uppercase ">
             {testimonialsList[testimonialI].name}
           </p>
           <p>{testimonialsList[testimonialI].testimonial}</p>
