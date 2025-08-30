@@ -7,7 +7,7 @@ import { contato } from "../../contato/contato";
 const Footer = () => {
   return (
     <footer className="px-16 py-8 bg-base-400 font-dm">
-      <div className="flex justify-between mb-16">
+      <div className="flex justify-between items-center mb-16 flex-col md:flex-row w-[100%]">
         <div className="space-y-10">
           <Image src={logoWhite} height={143} width={325} alt="logo.svg" />
           <Link
@@ -17,7 +17,7 @@ const Footer = () => {
             Transforme seu sonho em realidade
           </Link>
         </div>
-        <div className="text-base-100 flex gap-32">
+        <div className="text-base-100 flex gap-32 mt-14">
           <div className="space-y-6">
             <p className="font-bold">Sobre</p>
             <ul className="space-y-4">

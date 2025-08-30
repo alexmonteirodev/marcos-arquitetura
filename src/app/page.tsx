@@ -106,8 +106,8 @@ export default function Home() {
           </h1>
           <Link href={contato} className="">
             <div className="inline-flex items-center gap-15 font-dm font-semibold text-2xl bg-[#F3F3F2] py-4 px-8 rounded-full hover:scale-110 duration-200 transition hover:bg-base-300">
-              <p> Envie uma mensagem</p>
-              <div className=" bg-base-300 size-20 flex justify-center items-center rounded-full ">
+              <p>Enviar mensagem</p>
+              <div className=" bg-base-300 p-6 flex justify-center items-center rounded-full ">
                 <Image
                   src={mensageIcon}
                   height={25}

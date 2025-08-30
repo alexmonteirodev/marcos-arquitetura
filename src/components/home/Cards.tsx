@@ -9,17 +9,17 @@ const Cards = () => {
   const cardsObj = [
     {
       label: "Projeto de Arquitetura",
-      link: "",
+      link: "/servicos",
       img: cardArquitetura,
     },
     {
       label: "Projeto de Interiores",
-      link: "",
+      link: "/servicos#interiores",
       img: cardInteriores,
     },
     {
       label: "Acompanhamento de Obra",
-      link: "",
+      link: "/servicos#obra",
       img: cardInteriores,
     },
   ];
