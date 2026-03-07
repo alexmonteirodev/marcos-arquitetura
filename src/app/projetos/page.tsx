@@ -4,6 +4,8 @@ import apartamentoRd from ".././../../public/imgs/projetos/apartamento-rd.svg";
 import casaEj from ".././../../public/imgs/projetos/casa-ej.svg";
 import chacaraBa from ".././../../public/imgs/projetos/chacara-ba.svg";
 
+
+//comentario aqui
 const Projects = () => {
   const projetos = [
     {
