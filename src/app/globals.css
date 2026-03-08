@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -41,4 +41,170 @@ body {
 
 img {
   width: "auto";
+} */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+:root {
+  --forest:   #2d3a25;
+  --sage:     #4a5940;
+  --mist:     #a6ad9c;
+  --linen:    #f3f2ee;
+  --warm-off: #eceae4;
+  --gold:     #b8935a;
+  --black:    #1a1c18;
+  --white:    #ffffff;
+
+  --display: var(--font-cormorant), Georgia, serif;
+  --sans:    var(--font-jost), sans-serif;
+  --body:    var(--font-dm), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+/* ── Reveal animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content > * {
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-eyebrow  { animation-delay: 0.1s; }
+.hero-h1       { animation-delay: 0.25s; }
+.hero-actions  { animation-delay: 0.4s; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .intro-grid        { grid-template-columns: 1fr !important; }
+  .services-grid-3   { grid-template-columns: 1fr 1fr !important; }
+  .portfolio-grid    { grid-template-columns: 1fr !important; }
+  .process-grid      { grid-template-columns: 1fr 1fr !important; }
+  .cta-grid          { grid-template-columns: 1fr !important; }
+  .footer-grid       { grid-template-columns: 1fr !important; gap: 40px !important; }
+}
+
+@media (max-width: 768px) {
+  section { padding: 80px 24px !important; }
+  .services-grid-3   { grid-template-columns: 1fr !important; }
+  .process-grid      { grid-template-columns: 1fr !important; }
+  .hero-content      { padding: 0 24px 64px !important; }
+}
+/* ── Buttons ── */
+.btn-primary {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--white);
+  padding: 16px 36px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+.btn-primary:hover { background: var(--gold); color: var(--white); }
+
+.btn-ghost {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: color 0.2s;
+}
+.btn-ghost:hover { color: white; }
+
+.btn-dark {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--black);
+  padding: 18px 40px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.25s;
+  width: fit-content;
+}
+.btn-dark:hover { background: var(--gold); }
+
+/* ── Nav ── */
+.nav-link {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: white; }
+
+.nav-cta {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 12px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s;
+}
+.nav-cta:hover { background: var(--gold); border-color: var(--gold); }
+
+/* ── Service cards ── */
+.service-card:hover .service-card-img { transform: scale(1.05); }
+.service-card:hover .service-icon {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+}
+
+/* ── Footer links ── */
+.footer-link {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: white; }
+
+.footer-legal-link {
+  font-size: 12px;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-legal-link:hover { color: rgba(255,255,255,0.6); }
