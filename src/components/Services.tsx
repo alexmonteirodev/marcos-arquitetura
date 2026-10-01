@@ -1,69 +1,68 @@
 "use client";
-import { Eyebrow } from "@/ui/Eyebrow";
-import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { Placeholder } from "@/ui/Placeholder";
 
-
-const cards = [
-  { tag: "01", name: "Projeto de Arquitetura", href: "/servicos",             img: "/imgs/home/card-arquitetura.jpg" },
-  { tag: "02", name: "Projeto de Interiores",  href: "/servicos#interiores",  img: "/imgs/home/card-interiores.jpg"  },
-  { tag: "03", name: "Acompanhamento de Obra", href: "/servicos#obra",        img: "/imgs/home/card-obra.jpg"        },
+const services = [
+  { name: "Projeto de Arquitetura", image: "foto · fachada, projeto arquitetônico" },
+  { name: "Projeto de Interiores", image: "foto · ambiente interno decorado" },
+  { name: "Acompanhamento de obra", image: "foto · obra em andamento" },
+  { name: "Fachada e volumetria", image: "render · volumetria e fachada" },
+  { name: "Consultoria", image: "foto · reunião de consultoria" },
 ];
 
 export default function Services() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const track = trackRef.current;
+      if (!track) return;
+      const rect = track.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      const progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
+      setActiveIndex(Math.min(services.length - 1, Math.floor(progress * services.length)));
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
-    <section id="servicos" style={{ background: "var(--white)", padding: "120px 80px" }}>
-      {/* Header */}
-      <div className="reveal" style={{ marginBottom: 72 }}>
-        <Eyebrow label="Serviços" />
-        <h2 style={{ fontFamily: "var(--display)", fontWeight: 400, fontSize: "clamp(36px,4vw,52px)", lineHeight: 1.1, color: "var(--black)" }}>
-          Projetamos espaços personalizados<br />
-          <strong style={{ fontWeight: 500, fontStyle: "italic" }}>do jeito que você sempre quis.</strong>
-        </h2>
+    <section id="portfolio" className="page-section" style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "60px 32px" }}>
+      <div ref={trackRef} style={{ position: "relative", height: `calc(100vh * ${services.length})` }}>
+        <div className="services-sticky" style={{ position: "sticky", top: 0, height: "100vh", display: "flex", alignItems: "center", gap: 56 }}>
+          <div style={{ flex: 1, minWidth: 260, display: "flex", flexDirection: "column", gap: 16 }}>
+            <h2 className="section-title">serviços</h2>
+            <p className="body-text" style={{ lineHeight: 1.6, maxWidth: 460, margin: "8px 0 24px" }}>
+              Cada projeto pede uma abordagem diferente. Por isso, reunimos diferentes serviços para acompanhar cada etapa, da ideia à realização.
+            </p>
+            {services.map((service, i) => {
+              const active = i === activeIndex;
+              return (
+                <div key={service.name} style={{ padding: "4px 0" }}>
+                  <div style={{ fontSize: "clamp(20px,2.4vw,28px)", fontWeight: 600, letterSpacing: "-0.01em", transition: "color 0.3s ease, opacity 0.3s ease", color: active ? "var(--ink)" : "var(--inactive)", opacity: active ? 1 : 0.7 }}>
+                    {service.name}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="services-image" style={{ width: 460, maxWidth: "46%", height: 520, maxHeight: "70vh", borderRadius: 6, overflow: "hidden", flexShrink: 0 }}>
+            <Placeholder label={services[activeIndex].image} style={{ width: "100%", height: "100%", fontSize: 11 }} />
+          </div>
+        </div>
       </div>
-
-      {/* Grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
-        {cards.map((card, i) => (
-          <Link
-            key={card.tag}
-            href={card.href}
-            className="reveal service-card"
-            style={{ position: "relative", borderRadius: 4, overflow: "hidden", aspectRatio: "4/5", cursor: "pointer", display: "block", transitionDelay: `${i * 0.1}s` }}
-          >
-            <Image
-              src={card.img}
-              alt={card.name}
-              fill
-              style={{ objectFit: "cover", transition: "transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)" }}
-              className="service-card-img"
-            />
-            {/* Overlay */}
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(20,26,16,0.80) 0%, transparent 55%)" }} />
-            {/* Content */}
-            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "36px 32px" }}>
-              <span style={{ fontFamily: "var(--sans)", fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)", display: "block", marginBottom: 10 }}>
-                {card.tag}
-              </span>
-              <div style={{ fontFamily: "var(--display)", fontSize: 28, fontWeight: 400, color: "var(--white)", lineHeight: 1.2 }}>
-                {card.name}
-              </div>
-            </div>
-            {/* Icon */}
-            <div
-              className="service-icon"
-              style={{ position: "absolute", top: 28, right: 28, width: 44, height: 44, borderRadius: "50%", background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: 18, transition: "background 0.3s, border-color 0.3s" }}
-            >
-              +
-            </div>
-          </Link>
-        ))}
-      </div>
-
-      <style>{`
-        .service-card:hover .service-card-img { transform: scale(1.05); }
-        .service-card:hover .service-icon { background: var(--gold) !important; border-color: var(--gold) !important; }
-      `}</style>
     </section>
   );
 }

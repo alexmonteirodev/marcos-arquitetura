@@ -1,65 +1,37 @@
-"use client";
-import { BtnDark } from "@/ui/BtnDark";
-import { Eyebrow } from "@/ui/Eyebrow";
-import Image from "next/image";
-import { useState } from "react";
+import { Placeholder } from "@/ui/Placeholder";
 
-
-const tabs = ["Render", "Layout", "Planta baixa"];
+const projects = [
+  { name: "Terra Verde", place: "Brasília · 2026", category: "Residencial", image: "render · fachada em terreno inclinado" },
+  { name: "Pátio Nova", place: "Goiânia · 2025", category: "Residencial", image: "foto · pátio interno com jardim" },
+  { name: "Casa Cerrado", place: "Anápolis · 2025", category: "Residencial", image: "foto · fachada em madeira e vidro" },
+  { name: "Refúgio Sereno", place: "Pirenópolis · 2024", category: "Interiores", image: "foto · varanda com cobertura em madeira" },
+];
 
 export default function Portfolio() {
-  const [active, setActive] = useState(0);
-
   return (
-    <section id="projetos" style={{ background: "var(--linen)", padding: "80px 80px" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 80, alignItems: "center" }}>
+    <section id="portfolio-lista" className="page-section" style={{ maxWidth: 1280, margin: "0 auto", padding: "120px 32px", display: "flex", flexDirection: "column", gap: 32 }}>
+      <div className="reveal" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 24, flexWrap: "wrap" }}>
+        <h2 className="section-title">Projetos<br />selecionados</h2>
+        <div style={{ fontSize: 24, fontWeight: 700 }}>({String(projects.length).padStart(2, "0")})</div>
+      </div>
 
-        {/* Image */}
-        <div className="reveal" style={{ position: "relative", borderRadius: 4, overflow: "hidden" }}>
-          <Image
-            src="/imgs/home/render.jpg"
-            alt="Portfólio"
-            width={600}
-            height={560}
-            style={{ width: "100%", height: 560, objectFit: "cover", display: "block" }}
-          />
-        </div>
-
-        {/* Text */}
-        <div className="reveal" style={{ transitionDelay: "0.12s" }}>
-          <Eyebrow label="Portfólio" />
-          <h2 style={{ fontFamily: "var(--display)", fontWeight: 400, fontSize: 48, lineHeight: 1.1, color: "var(--black)", marginBottom: 24 }}>
-            Cada entrega,<br /><em style={{ fontStyle: "italic", color: "var(--sage)" }}>uma obra única.</em>
-          </h2>
-
-          {/* Tabs */}
-          <div style={{ display: "flex", borderBottom: "1px solid #d4d1c8", marginBottom: 32 }}>
-            {tabs.map((tab, i) => (
-              <button
-                key={tab}
-                onClick={() => setActive(i)}
-                style={{
-                  fontFamily: "var(--sans)", fontSize: 12, letterSpacing: 2, textTransform: "uppercase",
-                  color: active === i ? "var(--forest)" : "var(--mist)",
-                  background: "none", border: "none",
-                  padding: "14px 24px 14px 0", marginRight: 24,
-                  cursor: "pointer",
-                  borderBottom: active === i ? "2px solid var(--gold)" : "2px solid transparent",
-                  marginBottom: -1,
-                  transition: "color 0.2s, border-color 0.2s",
-                }}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-
-          <p style={{ fontFamily: "var(--body)", fontSize: 16, lineHeight: 1.85, color: "#5a5a52", marginBottom: 40 }}>
-            Buscamos traduzir a essência dos clientes em projetos que perdurem. Cada espaço é concebido com intenção, materiais cuidados e atenção aos detalhes que transformam ambientes em experiências.
-          </p>
-
-          <BtnDark href="#contato">Quero Contratar</BtnDark>
-        </div>
+      <div className="portfolio-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "40px 32px" }}>
+        {projects.map((project) => (
+          <a key={project.name} href="#contato" className="project-card reveal" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div style={{ borderRadius: 6, overflow: "hidden" }}>
+              <Placeholder label={project.image} style={{ width: "100%", aspectRatio: "4/3", fontSize: 11 }} />
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+              <div>
+                <div style={{ fontWeight: 700, fontSize: 19 }}>{project.name}</div>
+                <div style={{ fontSize: 13, color: "var(--muted-2)", marginTop: 2 }}>{project.place}</div>
+              </div>
+              <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--muted-2)" }}>
+                {project.category}
+              </span>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   );

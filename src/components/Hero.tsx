@@ -1,33 +1,43 @@
 import Image from "next/image";
-import banner from "../../public/imgs/home/banner.jpg";
+import logo from "../../public/imgs/home/logo-white.png";
+
+const links = [
+  { href: "#portfolio-lista", label: "Projetos" },
+  { href: "#servicos", label: "Serviços" },
+  { href: "#portfolio", label: "Processo" },
+];
 
 export default function Hero() {
   return (
-    <section style={{ position: "relative", height: "100vh", minHeight: 720, display: "flex", alignItems: "flex-end", padding: "0 80px 100px", overflow: "hidden" }}>
+    <section style={{ position: "relative", width: "100%", height: "100vh", minHeight: 640, overflow: "hidden", display: "flex", flexDirection: "column", color: "var(--white)" }}>
       <Image
-        src={banner}
-        alt="Marcos Vinícius Arquitetura"
+        src="/imgs/home/hero.png"
+        alt="Fachada de casa moderna com piscina, jardim e pôr do sol"
         fill
         priority
-        style={{ objectFit: "cover", objectPosition: "center", zIndex: 0 }}
+        sizes="100vw"
+        style={{ objectFit: "cover", zIndex: 0 }}
       />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(20,26,16,0.70) 0%, rgba(20,26,16,0.30) 60%, transparent 100%)", zIndex: 1 }} />
+      <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(180deg, oklch(15% 0.01 240 / 0.35) 0%, oklch(15% 0.01 240 / 0) 30%, oklch(15% 0.01 240 / 0) 55%, oklch(10% 0.01 240 / 0.6) 100%)" }} />
 
-      <div style={{ position: "relative", zIndex: 2, maxWidth: 560 }} className="hero-content">
-        <div className="hero-eyebrow" style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
-          <div style={{ width: 48, height: 1, background: "var(--gold)" }} />
-          <span style={{ fontFamily: "var(--sans)", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)" }}>
-            Brasília · Arquitetura Autoral
-          </span>
-        </div>
+      <header className="hero-header" style={{ position: "relative", zIndex: 2, display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", padding: "32px 40px", gap: 16, flexWrap: "wrap" }}>
+        <Image src={logo} alt="Marcos Vinícius Arquitetura" priority style={{ height: 40, width: "auto" }} />
+        <nav className="hero-nav" style={{ display: "flex", alignItems: "center", gap: 28, whiteSpace: "nowrap" }}>
+          {links.map((link) => (
+            <a key={link.label} href={link.href} className="nav-link">
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <a href="#contato" className="pill">entre em contato</a>
+      </header>
 
-        <h1 className="hero-h1" style={{ fontFamily: "var(--display)", fontWeight: 400, fontSize: "clamp(52px,6vw,76px)", lineHeight: 1.08, color: "var(--white)", marginBottom: 36 }}>
-          Arquitetura <em style={{ fontStyle: "italic", color: "var(--mist)" }}>sob medida</em> para você.
+      <div className="hero-bottom" style={{ position: "relative", zIndex: 2, display: "flex", alignItems: "flex-end", justifyContent: "space-between", padding: "0 40px 40px", marginTop: "auto", gap: 24, flexWrap: "wrap" }}>
+        <h1 className="hero-title" style={{ fontSize: "clamp(36px,6vw,72px)", fontWeight: 400, lineHeight: 1.15, letterSpacing: "-0.01em", maxWidth: 640 }}>
+          Arquitetura pensada para&nbsp;<br />sua forma de viver.
         </h1>
-
-        <div className="hero-actions" style={{ display: "flex", alignItems: "center", gap: 40 }}>
-          <a href="#servicos" className="btn-primary">Ver Serviços</a>
-          <a href="#projetos" className="btn-ghost">Explorar Projetos <span>→</span></a>
+        <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", opacity: 0.85 }}>
+          (Role para baixo)
         </div>
       </div>
     </section>
