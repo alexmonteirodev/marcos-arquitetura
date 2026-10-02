@@ -5,18 +5,30 @@ import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import { RevealProvider } from "@/ui/RevealProvider";
+import { SmoothScroll } from "@/ui/SmoothScroll";
 
 export default function Home() {
   return (
     <RevealProvider>
+      <SmoothScroll />
       <main>
-        <Hero />
-        <About />
-        <Portfolio />
-        <Services />
-        <Contact />
+        <Hero
+          focusX={77}
+          focusY={90}
+          zoom={1.25}
+          scrollZoom={0.03}
+          parallax={25}
+        />
+        <div className="page-over">
+          <About />
+          <Portfolio />
+          <Services />
+          <Contact />
+        </div>
       </main>
-      <Footer />
+      <div className="page-over">
+        <Footer />
+      </div>
     </RevealProvider>
   );
 }
