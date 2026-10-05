@@ -20,22 +20,22 @@ const services: Service[] = [
   {
     name: "Projeto de Interiores",
     image: "foto · ambiente interno decorado",
-    src: "/imgs/services/projeto-de-arquitetura.jpg",
+    src: "/imgs/services/projeto-de-interiores.jpg",
   },
   {
     name: "Acompanhamento de obra",
     image: "foto · obra em andamento",
-    src: "/imgs/services/projeto-de-arquitetura.jpg",
+    src: "/imgs/services/acompanhamento-de-obra.jpg",
   },
   {
     name: "Fachada e volumetria",
     image: "render · volumetria e fachada",
-    src: "/imgs/services/projeto-de-arquitetura.jpg",
+    src: "/imgs/services/fachada-e-volumetria.jpg",
   },
   {
     name: "Consultoria",
     image: "foto · reunião de consultoria",
-    src: "/imgs/services/projeto-de-arquitetura.jpg",
+    src: "/imgs/services/consultoria.jpg",
   },
 ];
 
@@ -123,7 +123,7 @@ export default function Services() {
                 <div key={service.name} style={{ padding: "4px 0" }}>
                   <div
                     style={{
-                      fontSize: "clamp(20px,2.4vw,28px)",
+                      fontSize: "clamp(20px,2.4vw,48px)",
                       fontWeight: 600,
                       letterSpacing: "-0.01em",
                       transition: "color 0.3s ease, opacity 0.3s ease",
