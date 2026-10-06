@@ -1,4 +1,5 @@
 "use client";
+import { Fragment } from "react";
 import Image from "next/image";
 import { SiteHeader } from "@/components/SiteHeader";
 import { useHeroProgress } from "@/ui/useHeroProgress";
@@ -11,16 +12,37 @@ type ProjectHeroProps = {
   country: string;
 };
 
-export function ProjectHero({ name, src, alt, location, country }: ProjectHeroProps) {
+export function ProjectHero({
+  name,
+  src,
+  alt,
+  location,
+  country,
+}: ProjectHeroProps) {
   const wrapRef = useHeroProgress<HTMLElement>();
   const words = name.split(" ");
 
   return (
     <section ref={wrapRef} className="hero-wrap">
-      <div className="hero-sticky" style={{ display: "flex", flexDirection: "column", color: "var(--white)" }}>
+      <div
+        className="hero-sticky"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          color: "var(--white)",
+        }}
+      >
         <div className="hero-media" style={{ background: "var(--ink)" }}>
           {src && (
-            <Image src={src} alt={alt} fill priority sizes="100vw" quality={90} style={{ objectFit: "cover" }} />
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              priority
+              sizes="100vw"
+              quality={90}
+              style={{ objectFit: "cover" }}
+            />
           )}
         </div>
         <div
@@ -52,9 +74,16 @@ export function ProjectHero({ name, src, alt, location, country }: ProjectHeroPr
         >
           <h1 className="project-title">
             {words.map((word, i) => (
-              <span key={word} className="intro-line">
-                <span style={{ "--d": `${0.5 + i * 0.12}s` } as React.CSSProperties}>{word}</span>
-              </span>
+              <Fragment key={i}>
+                {i > 0 && " "}
+                <span className="intro-line">
+                  <span
+                    style={{ "--d": `${0.5 + i * 0.12}s` } as React.CSSProperties}
+                  >
+                    {word}
+                  </span>
+                </span>
+              </Fragment>
             ))}
           </h1>
           <div

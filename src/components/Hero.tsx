@@ -51,7 +51,7 @@ export default function Hero({
       >
         <div className="hero-media">
           <Image
-            src="/imgs/home/hero.png"
+            src="/imgs/home/heroajustado.jpg"
             alt="Fachada de casa moderna com piscina, jardim e pôr do sol"
             fill
             priority

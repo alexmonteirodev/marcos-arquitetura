@@ -14,8 +14,8 @@ export default function Home() {
       <main>
         <Hero
           focusX={77}
-          focusY={90}
-          zoom={1.25}
+          focusY={10}
+          zoom={1.06}
           scrollZoom={0.03}
           parallax={25}
         />

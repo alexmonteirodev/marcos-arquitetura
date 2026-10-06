@@ -4,7 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Footer from "@/components/Footer";
 import { ProjectHero } from "@/components/project/ProjectHero";
-import { getNextProject, getProject, projects, type GalleryItem } from "@/data/projects";
+import {
+  getNextProject,
+  getProject,
+  projects,
+  type GalleryItem,
+} from "@/data/projects";
 import { Placeholder } from "@/ui/Placeholder";
 import { RevealProvider } from "@/ui/RevealProvider";
 import { RollText } from "@/ui/RollText";
@@ -35,11 +40,28 @@ const specLabel = {
 
 function GalleryImage({ item }: { item: GalleryItem }) {
   return (
-    <div style={{ position: "relative", aspectRatio: item.ratio, height: item.ratio ? undefined : "100%", borderRadius: 4, overflow: "hidden" }}>
+    <div
+      style={{
+        position: "relative",
+        aspectRatio: item.ratio,
+        height: item.ratio ? undefined : "100%",
+        borderRadius: 4,
+        overflow: "hidden",
+      }}
+    >
       {item.src ? (
-        <Image src={item.src} alt={item.label} fill sizes="(max-width: 768px) 100vw, 1440px" style={{ objectFit: "cover" }} />
+        <Image
+          src={item.src}
+          alt={item.label}
+          fill
+          sizes="(max-width: 768px) 100vw, 1440px"
+          style={{ objectFit: "cover" }}
+        />
       ) : (
-        <Placeholder label={item.label} style={{ width: "100%", height: "100%", minHeight: 200 }} />
+        <Placeholder
+          label={item.label}
+          style={{ width: "100%", height: "100%", minHeight: 200 }}
+        />
       )}
     </div>
   );
@@ -56,7 +78,13 @@ export default async function ProjectPage({ params }: Params) {
     <RevealProvider>
       <SmoothScroll />
       <main>
-        <ProjectHero name={project.name} src={project.src} alt={project.image} location={page.location} country={page.country} />
+        <ProjectHero
+          name={project.name}
+          src={project.src}
+          alt={project.image}
+          location={page.location}
+          country={page.country}
+        />
 
         <div className="page-over" style={{ background: "var(--paper)" }}>
           <section
@@ -66,12 +94,28 @@ export default async function ProjectPage({ params }: Params) {
               margin: "0 auto",
               padding: "160px 32px 120px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 380px), 1fr))",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(min(100%, 380px), 1fr))",
               gap: 80,
             }}
           >
-            <div className="body-text" style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 640 }}>
-              <p style={{ fontSize: "clamp(22px, 2.4vw, 30px)", lineHeight: 1.3, fontWeight: 500, color: "var(--ink)" }}>
+            <div
+              className="body-text"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 24,
+                maxWidth: 640,
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "clamp(22px, 2.4vw, 30px)",
+                  lineHeight: 1.3,
+                  fontWeight: 500,
+                  color: "var(--ink)",
+                }}
+              >
                 {page.lead}
               </p>
               {page.paragraphs.map((text) => (
@@ -94,7 +138,14 @@ export default async function ProjectPage({ params }: Params) {
 
           <section
             className="page-section"
-            style={{ maxWidth: 1440, margin: "0 auto", padding: "0 32px 160px", display: "flex", flexDirection: "column", gap: 32 }}
+            style={{
+              maxWidth: 1440,
+              margin: "0 auto",
+              padding: "0 32px 160px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 32,
+            }}
           >
             {page.gallery.map((row, i) => (
               <div

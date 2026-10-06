@@ -34,8 +34,7 @@ export const projects: Project[] = [
     name: "Casa PN",
     place: "Brasília · 2026",
     category: "Residencial",
-    image:
-      "Fachada da Casa PN com muxarabi, pedra e madeira, ao pôr do sol",
+    image: "Fachada da Casa PN com muxarabi, pedra e madeira, ao pôr do sol",
     src: "/imgs/projetos/casa-pn.jpg",
     page: {
       location: "Brasília, DF",
@@ -56,25 +55,52 @@ export const projects: Project[] = [
       gallery: [
         {
           items: [
-            { label: "Área externa com deck de madeira e piscina ao entardecer", ratio: "16/9", src: "/imgs/projetos/casa-pn/area-externa.jpg" },
+            {
+              label: "Área externa com deck de madeira e piscina ao entardecer",
+              ratio: "16/9",
+              src: "/imgs/projetos/casa-pn/area-externa.png",
+            },
           ],
         },
         {
           items: [
-            { label: "Adega envidraçada com parede de pedra", ratio: "4/5", src: "/imgs/projetos/casa-pn/adega.jpg" },
-            { label: "Lavabo com bancada em mármore e espelho redondo iluminado", ratio: "4/5", src: "/imgs/projetos/casa-pn/lavabo.jpg" },
+            {
+              label: "Adega envidraçada com parede de pedra",
+              ratio: "4/5",
+              src: "/imgs/projetos/casa-pn/adega.jpg",
+            },
+            {
+              label:
+                "Lavabo com bancada em mármore e espelho redondo iluminado",
+              ratio: "4/5",
+              src: "/imgs/projetos/casa-pn/lavabo.jpg",
+            },
           ],
         },
         {
           items: [
-            { label: "Living integrado à cozinha, com forro de madeira e parede de pedra", ratio: "16/9", src: "/imgs/projetos/casa-pn/living.jpg" },
+            {
+              label:
+                "Living integrado à cozinha, com forro de madeira e parede de pedra",
+              ratio: "16/9",
+              src: "/imgs/projetos/casa-pn/living.png",
+            },
           ],
         },
         {
           split: true,
           items: [
-            { label: "Espaço gourmet com ilha em mármore e mesa para doze lugares", ratio: "2/1", src: "/imgs/projetos/casa-pn/gourmet.jpg" },
-            { label: "Banheiro com revestimento em pedra e bancada suspensa", ratio: "1/1", src: "/imgs/projetos/casa-pn/banheiro.jpg" },
+            {
+              label:
+                "Espaço gourmet com ilha em mármore e mesa para doze lugares",
+              ratio: "2/1",
+              src: "/imgs/projetos/casa-pn/gourmet.jpg",
+            },
+            {
+              label: "Banheiro com revestimento em pedra e bancada suspensa",
+              ratio: "1/1",
+              src: "/imgs/projetos/casa-pn/banheiro.jpg",
+            },
           ],
         },
       ],
@@ -85,7 +111,8 @@ export const projects: Project[] = [
     name: "Apt RD",
     place: "Goiânia · 2025",
     category: "Residencial",
-    image: "Canto alemão em marcenaria curva, mesa de mármore e pendente de palha",
+    image:
+      "Canto alemão em marcenaria curva, mesa de mármore e pendente de palha",
     src: "/imgs/projetos/apt-rd.jpg",
     page: {
       location: "Goiânia, GO",
@@ -106,24 +133,51 @@ export const projects: Project[] = [
       gallery: [
         {
           items: [
-            { label: "Cozinha integrada ao jantar, com coluna em madeira ripada e adega", ratio: "16/9", src: "/imgs/projetos/apt-rd/cozinha-e-jantar.jpg" },
+            {
+              label:
+                "Cozinha integrada ao jantar, com coluna em madeira ripada e adega",
+              ratio: "16/9",
+              src: "/imgs/projetos/apt-rd/cozinha-e-jantar.jpg",
+            },
           ],
         },
         {
           items: [
-            { label: "Suíte com cabeceira em madeira e armários suspensos", ratio: "1/1", src: "/imgs/projetos/apt-rd/suite.jpg" },
-            { label: "Quarto com bancada de estudos e painel em madeira", ratio: "1/1", src: "/imgs/projetos/apt-rd/quarto-escritorio.jpg" },
+            {
+              label: "Suíte com cabeceira em madeira e armários suspensos",
+              ratio: "1/1",
+              src: "/imgs/projetos/apt-rd/suite.jpg",
+            },
+            {
+              label: "Quarto com bancada de estudos e painel em madeira",
+              ratio: "1/1",
+              src: "/imgs/projetos/apt-rd/quarto-escritorio.jpg",
+            },
           ],
         },
         {
           items: [
-            { label: "Sala de estar com painel curvo em madeira ripada", ratio: "16/9", src: "/imgs/projetos/apt-rd/sala.jpg" },
+            {
+              label: "Sala de estar com painel curvo em madeira ripada",
+              ratio: "16/9",
+              src: "/imgs/projetos/apt-rd/sala.jpg",
+            },
           ],
         },
         {
           items: [
-            { label: "Banheiro social com revestimento em granilite e nicho metálico", ratio: "6/5", src: "/imgs/projetos/apt-rd/banheiro-social.jpg" },
-            { label: "Banheiro da suíte com revestimento geométrico e bancada em mármore escuro", ratio: "6/5", src: "/imgs/projetos/apt-rd/banheiro-suite.jpg" },
+            {
+              label:
+                "Banheiro social com revestimento em granilite e nicho metálico",
+              ratio: "6/5",
+              src: "/imgs/projetos/apt-rd/banheiro-social.jpg",
+            },
+            {
+              label:
+                "Banheiro da suíte com revestimento geométrico e bancada em mármore escuro",
+              ratio: "6/5",
+              src: "/imgs/projetos/apt-rd/banheiro-suite.jpg",
+            },
           ],
         },
       ],
@@ -135,7 +189,7 @@ export const projects: Project[] = [
     place: "Pirenópolis · 2024",
     category: "Interiores",
     image: "Varanda gourmet com forro de madeira e piscina ao entardecer",
-    src: "/imgs/projetos/chacara-ba.jpg",
+    src: "/imgs/projetos/chacara-ba/cozinha-gourmet.png",
     page: {
       location: "Pirenópolis, GO",
       country: "Brasil",
@@ -155,24 +209,49 @@ export const projects: Project[] = [
       gallery: [
         {
           items: [
-            { label: "Fachada com varanda coberta e jardim de palmeiras", ratio: "16/9", src: "/imgs/projetos/chacara-ba/fachada.jpg" },
+            {
+              label: "Fachada com varanda coberta e jardim de palmeiras",
+              ratio: "16/9",
+              src: "/imgs/projetos/chacara-ba/fachada.png",
+            },
           ],
         },
         {
           items: [
-            { label: "Deck de madeira com piscina e espreguiçadeiras", ratio: "16/9", src: "/imgs/projetos/chacara-ba/deck-e-piscina.jpg" },
-            { label: "Lareira externa com sofá em L voltado para o campo", ratio: "16/9", src: "/imgs/projetos/chacara-ba/lareira-externa.jpg" },
+            {
+              label: "Deck de madeira com piscina e espreguiçadeiras",
+              ratio: "16/9",
+              src: "/imgs/projetos/chacara-ba/deck-e-piscina.png",
+            },
+            {
+              label: "Lareira externa com sofá em L voltado para o campo",
+              ratio: "16/9",
+              src: "/imgs/projetos/chacara-ba/lareira-externa.png",
+            },
           ],
         },
         {
           items: [
-            { label: "Estar da varanda com poltronas, jantar e cozinha ao fundo", ratio: "16/9", src: "/imgs/projetos/chacara-ba/estar.jpg" },
+            {
+              label:
+                "Estar da varanda com poltronas, jantar e cozinha ao fundo",
+              ratio: "16/9",
+              src: "/imgs/projetos/chacara-ba/estar.png",
+            },
           ],
         },
         {
           items: [
-            { label: "Cozinha gourmet com churrasqueira, forno a lenha e ilha", ratio: "16/9", src: "/imgs/projetos/chacara-ba/cozinha-gourmet.jpg" },
-            { label: "Mesa de jantar com pendentes e cobogós vazados", ratio: "16/9", src: "/imgs/projetos/chacara-ba/jantar.jpg" },
+            {
+              label: "Cozinha gourmet com churrasqueira, forno a lenha e ilha",
+              ratio: "16/9",
+              src: "/imgs/projetos/chacara-ba/cozinha-gourmet.png",
+            },
+            {
+              label: "Mesa de jantar com pendentes e cobogós vazados",
+              ratio: "16/9",
+              src: "/imgs/projetos/chacara-ba/jantar.png",
+            },
           ],
         },
       ],
@@ -183,7 +262,8 @@ export const projects: Project[] = [
     name: "Casa EJ",
     place: "Anápolis · 2025",
     category: "Residencial",
-    image: "Fachada da Casa EJ com volume em balanço e garagem em madeira ripada, ao entardecer",
+    image:
+      "Fachada da Casa EJ com volume em balanço e garagem em madeira ripada, ao entardecer",
     src: "/imgs/projetos/casa-ej.jpg",
     page: {
       location: "Anápolis, GO",
@@ -204,24 +284,49 @@ export const projects: Project[] = [
       gallery: [
         {
           items: [
-            { label: "Cozinha com ilha em madeira ripada e bancada de refeições", ratio: "16/9", src: "/imgs/projetos/casa-ej/cozinha-ilha.jpg" },
+            {
+              label:
+                "Cozinha com ilha em madeira ripada e bancada de refeições",
+              ratio: "16/9",
+              src: "/imgs/projetos/casa-ej/cozinha-ilha.jpg",
+            },
           ],
         },
         {
           items: [
-            { label: "Sala com pé-direito duplo, escada em balanço e pendentes", ratio: "1/1", src: "/imgs/projetos/casa-ej/sala.jpg" },
-            { label: "Espaço gourmet com churrasqueira e bancada em granito", ratio: "1/1", src: "/imgs/projetos/casa-ej/gourmet.jpg" },
+            {
+              label: "Sala com pé-direito duplo, escada em balanço e pendentes",
+              ratio: "1/1",
+              src: "/imgs/projetos/casa-ej/sala.jpg",
+            },
+            {
+              label: "Espaço gourmet com churrasqueira e bancada em granito",
+              ratio: "1/1",
+              src: "/imgs/projetos/casa-ej/gourmet.jpg",
+            },
           ],
         },
         {
           items: [
-            { label: "Cozinha integrada com pendentes em cobre", ratio: "16/9", src: "/imgs/projetos/casa-ej/cozinha.jpg" },
+            {
+              label: "Cozinha integrada com pendentes em cobre",
+              ratio: "16/9",
+              src: "/imgs/projetos/casa-ej/cozinha.jpg",
+            },
           ],
         },
         {
           items: [
-            { label: "Closet com marcenaria iluminada e espelho", ratio: "1/1", src: "/imgs/projetos/casa-ej/closet.jpg" },
-            { label: "Penteadeira dupla com espelhos suspensos", ratio: "1/1", src: "/imgs/projetos/casa-ej/penteadeira.jpg" },
+            {
+              label: "Closet com marcenaria iluminada e espelho",
+              ratio: "1/1",
+              src: "/imgs/projetos/casa-ej/closet.jpg",
+            },
+            {
+              label: "Penteadeira dupla com espelhos suspensos",
+              ratio: "1/1",
+              src: "/imgs/projetos/casa-ej/penteadeira.jpg",
+            },
           ],
         },
       ],

@@ -31,7 +31,7 @@ export default function Contact() {
         }}
       >
         <Image
-          src="/imgs/home/marcos-retrato.png"
+          src="/imgs/home/marcos-retrato.jpg"
           alt="Marcos Vinícius, arquiteto"
           fill
           sizes="(max-width: 900px) 100vw, 420px"
